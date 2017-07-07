@@ -1,0 +1,43 @@
+<div class="nav-box">
+    <div class="nav-bg nav-bg-background"></div>
+    <div class="nav">
+        <div class="logo">
+            <a href="/">
+                <img src="<?php echo IMG_PATH;?>images_6/navigation_3QK_logo@2x.png">
+            </a>
+        </div>
+        <header>
+            <div class="wrapper">
+                <div class="rm-container">
+                    <nav class="rm-nav rm-nojs rm-lighten">
+                        <ul>
+                            <li><a href="/">首页</a></li>
+                            <li><a href="/html/product/">产品体验</a>
+                            </li>
+                            <li><a href="/html/service/">直播服务</a></li>
+                            <li><a href="/html/livecase/">直播案例</a></li>
+                            <li><a href="http://www.easyvaas.com/3qk.html">开放平台</a></li>
+                            <li><a href="javascript:;" class="nav-telnumber"><img src="<?php echo IMG_PATH;?>images_6/footer_phone.png" class="nav-iphone-icon">400- 667- 9656</a></li>
+                            <li><a href="https://3qk.easyvaas.com/manage/login">登录</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </header>
+    </div>
+</div>
+<script type="text/javascript">
+      // 导航背景
+      if($(window).scrollTop()>0){
+          $(".nav-box").addClass("nav-box-active");
+      }else{
+          $(".nav-box").removeClass("nav-box-active");
+      }
+      $(window).scroll(function() {
+          if($(window).scrollTop()>0){
+              $(".nav-box").addClass("nav-box-active");
+          }else{
+              $(".nav-box").removeClass("nav-box-active");
+          }
+      });
+</script>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>易视云</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="Keywords" content="易视云，视频直播开放平台，视频直播SDK,手机APP直播源码，手机直播程序，VR直播，摄像机直播，电商直播，婚庆直播，会议直播，无人机、航拍直播，3D视频直播，金融直播间直播系统，金融直播间源码，教育直播，在线直播" />
+        <meta name="Description" content="易视云视频直播开放平台拥有领先的视频解码技术以及高流畅度的视频流媒体平台，提供视频直播SDK快速帮助企业APP，网站、微信等WEB端无缝衔接直播功能，并提供VR、无人机、航拍、摄像机直播，流媒体分发，存储等服务" />
+        <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="baidu-site-verification" content="UPiURnj690" />
+        <meta name="format-detection" content="telephone=no" />
+        <link rel="stylesheet" type="text/css" href="css/reset.css">
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="css/main.css">
+        <link rel="stylesheet" type="text/css" href="css/layer.css">
+        <style type="text/css">
+            .caseplayback-page-advantage{
+                display:none;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="news-page w1062">
+            <!-- 新闻列表页 -->
+            <div class="newscontent-left">
+                <div class="newscontent-top-nav">
+                    <span>媒体报道 > </span>
+                    <a href="javascript:;">MPEG WORKSHOP成功举办 易视云全球独家HD直播</a>
+                </div>
+                <div class="newscontent-banner"><img src="images/news_pic_ad1@2x.png"></div>
+                <div class="newscontent-info">
+                    <div class="newscontent-info-title">
+                        MPEG WORKSHOP成功举办 易视云全球独家HD直播
+                    </div>
+                    <div class="newscontent-info-time">
+                        2017-02-03
+                    </div>
+                    <div class="newscontent-info-word">
+                        <p>2016年10月19日，MPEG官方在中国成都成功举办了一场研讨会。会议主要讨论了MPEG的标准化进程，地区产业执行中主要涉及的新兴的媒体技术、产品和服务，同时也包含VR和AR技术方面的内容。MEPG会议是全球视频顶级专业会议，易视云作为本次Mpeg Workshop大会独家全球HD直播合作方（PC、移动端），成功完成本次活动直播，充分体现了业界对易视云的认可。活动结束后，MPEG主席LEO对此次活动直播效果表示非常满意，并主动与易视云直播团队合影。</p>
+                        <img src="images/news_pic_ad1@2x.png">
+                    </div>
+                </div>
+                <div class="newscontent-bottom-keys">
+                    关键词、关键词
+                </div>
+                <!-- 翻页效果 -->
+                <div id="callBackPagination" class="piece">
+                    <div id="mainContent"></div>
+                    <div id="callBackPager"></div>
+                </div>
+            </div>
+            <div class="news-right"></div>
+        </div>
+
+    </body>
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.js"></script>
+    <!-- 分页效果 -->
+    <script type="text/javascript" src="js/extendPagination.js"></script>
+    <script type="text/javascript">
+        // 直播列表的鼠标划入样式
+        $(".news-right").load("caseplayback.html");
+        $(".news-left li").hover(function(){
+            $(this).find(".news-info-title").addClass("set-color");
+        },function(){
+            $(this).find(".news-info-title").removeClass("set-color");
+        })
+    </script>
+    <script type="text/javascript">
+        var totalCount = 30;
+        var showCount = 10;
+        var limit = 1;
+        totalCount = totalCount || 252;
+        limit = limit || 10;
+        callBackPagination();
+        function callBackPagination() {
+            createTable(1, limit, totalCount);
+            $('#callBackPager').extendPagination({
+                totalCount: totalCount,
+                showCount: showCount,
+                limit: limit,
+                callback: function (curr, limit, totalCount) {
+                    createTable(curr, limit, totalCount);
+                }
+            });
+        }
+        function createTable(currPage, limit, total) {
+            var html = [], showNum = limit;
+            if (total - (currPage * limit) < 0) showNum = total - ((currPage - 1) * limit);
+            var mainObj = $('#mainContent');
+            mainObj.empty();
+            mainObj.html(html.join(''));
+        }
+    </script>
+</html>

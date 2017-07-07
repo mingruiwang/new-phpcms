@@ -1,0 +1,50 @@
+<div class="caseplayback-page">
+    <!-- 直播列表 -->
+    <div class="caseplayback-page-advantage">
+        <img src="{IMG_PATH}images_2/news_pic_ad1@2x.png">
+    </div>
+    <div class="caseplayback-page-title">精彩案例回放</div>
+    <div class="caseplayback">
+        <ul>
+            {pc:get sql="select*from 3qk_reply"}
+            {loop $data $row}
+            {php $i==1}
+             {php $i++}
+            <li>
+                <a href="{php echo $row[url]}">
+                    <img src="{php echo $row[img]}" class="caseplayback-img">
+                    <div class="caseplayback-title-box">
+                        <div class="caseplayback-title-bg"></div>
+                        <div class="caseplayback-title">{php echo $row[title]}</div>
+                    </div>
+                    <div class="caseplayback-bottom">
+                        <div class="caseplayback-name clearfix">
+                            <span>发起人</span>
+                            <span>{php echo $row[owner]}</span>
+                        </div>
+                        <div class="caseplayback-time">{php echo $row[starttime]}</div>
+                        <div class="caseplayback-number clearfix">
+                            <span><img src="{IMG_PATH}images_2/livecase_icon_peoplenumber@2x.png"></span>
+                            <span>{php echo $row[audience]}</span>
+                            <span>回放</span>
+                            <span><img src="{IMG_PATH}images_2/livecase_icon_playback2@2x.png"></span>
+                        </div>
+                    </div>
+                </a>
+            </li>
+             {php if($i==6)break;}
+            {/loop}
+            {/pc}
+        </ul>
+    </div>
+</div>
+<script type="text/javascript">
+    // 回放列表
+    $(".caseplayback li").hover(function(){
+        $(this).find(".caseplayback-img").addClass("set-opc4");
+        $(this).find(".caseplayback-title").addClass("set-color");
+    },function(){
+        $(this).find(".caseplayback-img").removeClass("set-opc4");
+        $(this).find(".caseplayback-title").removeClass("set-color");
+    })
+</script>

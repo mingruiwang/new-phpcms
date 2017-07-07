@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>三千氪直播招商加盟|直播加盟</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="Keywords" content="三千氪直播招商加盟|直播加盟" />
+        <meta name="Description" content="三千氪直播，领先的直播服务商,致力于为企业提供在线直播服务,视频直播设备,直播解决方案,视频会议软件等，直播加盟热线400-667-9656" />
+        <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="baidu-site-verification" content="UPiURnj690" />
+        <meta name="format-detection" content="telephone=no" />
+        <link rel="stylesheet" type="text/css" href="css/reset.css">
+        <link rel="stylesheet" type="text/css" href="css/main.css">
+        <link rel="stylesheet" type="text/css" href="css/responsive-menu.css">
+        <link rel="stylesheet" type="text/css" href="css/layer.css">
+    </head>
+    <body>
+        <!-- 导航 -->
+        <div class="nav-page"></div>
+        <div class="banner-join">
+            <div class="banner-join-box">
+                <div class="banner-join-list">
+                    <div class="banner-join-list-bg"></div>
+                    <div class="banner-join-list-info">
+                        <img src="images/join_icon_user1@2x.png">
+                        <p class="banner-join-list-title">保障服务</p>
+                        <p class="banner-join-list-1">
+                            <span>· 直播设备支持 ·</span><br>
+                            <span>· 直播技术培训 ·</span><br>
+                            <span>· 服务平台共享 ·</span><br>
+                            <span>· API/SDK接口 ·</span>
+                        </p>
+                    </div>
+                </div>
+                <div class="banner-join-list">
+                    <div class="banner-join-list-bg"></div>
+                    <div class="banner-join-list-info">
+                        <img src="images/join_icon_user2@2x.png">
+                        <p class="banner-join-list-title">应用场景</p>
+                        <div class="banner-info-list-2">
+                            <div>
+                                <p>活动</p>
+                                <p>峰会论坛 企业年会 产品发布会</p>
+                            </div>
+                            <div>
+                                <p>金融</p>
+                                <p>股票讲解 在线喊单</p>
+                            </div>
+                            <div>
+                                <p>培训</p>
+                                <p>在线培训 企业培训</p>
+                            </div>
+                            <div>
+                                <p>营销推广</p>
+                                <p>众筹路演 产品推荐</p>
+                            </div>
+                            <div>
+                                <p>专业领域</p>
+                                <p class="clear-border">VR直播 赛事直播 无人机</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="banner-join-list">
+                    <div class="banner-join-list-bg"></div>
+                    <div class="banner-join-list-info">
+                        <img src="images/join_icon_user3@2x.png">
+                        <p class="banner-join-list-title">价值与收益</p>
+                        <p class="banner-join-list-1">
+                            <span class="w150">· 提升自身品牌形象 ·</span><br>
+                            <span class="w150">· 延伸业务领域 ·</span><br>
+                            <span class="w150">· 收益分成模式 ·</span><br>
+                        </p>
+                    </div>
+                </div>
+                <a href="javascript:;" class="goto-more">了解详细加盟政策</a>
+            </div>
+        </div>
+        <div class="apply-page">
+            <div class="apply-h-1">请留下您的联系方式  我们会尽快联系您开通免费试播权限</div>
+            <div class="apply-form">
+                <ul>
+                    <li>
+                        <p>*姓名 <span>Full Name</span></p>
+                        <input type="text" name="customer_name">
+                    </li>
+                    <li>
+                        <p>*公司名称 <span>Company Name</span></p>
+                        <input type="text" name="customer_company">
+                    </li>
+                    <li>
+                        <p>*联系电话 <span>Contact Number</span></p>
+                        <input type="text" name="customer_phone">
+                    </li>
+                </ul>
+                <div class="call submit apply-join">自助提交加盟申请</div>
+            </div>
+        </div>
+        <div class="footer"></div>
+    </body>
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/layer.min.js"></script>
+    <script type="text/javascript">
+        $(".footer").load("footer.html");
+        $(".nav-page").load("header.html");
+        // 申请试用
+        function layerMsg(msg){
+            layer.open({
+                content: msg,
+                style: 'background-color:rgba(0,0,0,1); color:#fff !important; border:none;',
+                time: 3
+            }); 
+        }
+        $('.submit').on('click',function(){
+            var customer_name = $.trim($('input[name=customer_name]').val());
+            var customer_phone = $.trim($('input[name=customer_phone]').val());
+            var customer_company = $.trim($('input[name=customer_company]').val());
+            if(customer_name.length<=0){
+                layerMsg('请填写联系人的名字')
+                return false;
+            }
+            if(customer_company.length<=0){
+                layerMsg('请填写公司名称')
+                return false;
+            }
+            if( (/^(((1[3578][0-9])|(147)|(170)){1}\d{8})$/.test(customer_phone)) ==false ){
+                layerMsg('请填写联系人的联系电话')
+                return false;               
+            }
+            $.ajax({
+                url:'http://open.easylive.com/sdk/api/sdk/apply',
+                type:'post',
+                dataType:'jsonp',
+                data:{
+                    customer_name:customer_name,
+                    customer_phone:customer_phone,
+                    customer_company:customer_company,
+                },
+                success:function(data){
+                    if(data.status==0){
+                        layerMsg('申请成功，我们将尽快与您联系！');
+                        setTimeout(function(){
+                            $(".application-page").css("display","none");
+                            $('input[name=customer_name]').val("");
+                            $('input[name=customer_phone]').val("");
+                            $('input[name=customer_company]').val("");
+                        },3000)
+                    }
+                }
+            })
+        })
+    </script>
+
+</html>

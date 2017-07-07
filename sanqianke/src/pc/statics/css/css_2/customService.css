@@ -1,0 +1,104 @@
+.custom-service #newBridge .icon-right-center{
+	background-color: #f4f4f4;
+	border-radius: 6px;
+	width: 120px !important;
+	box-shadow: 2px 2px 8px rgba(00,00,00, 0.3);
+}
+.custom-service #newBridge .nb-icon-inner-wrap{
+	background: transparent !important;
+	width: 100% !important;
+	margin-top: 10px;
+}
+.custom-service #newBridge .nb-icon-skin-9 .nb-icon-bridge0{
+}
+.custom-service #newBridge .nb-icon-base .nb-icon-bridge-base{
+	width: 94px;
+	margin-left:-47px;
+	background: url(../images/consult@1x.png) center center no-repeat;
+}
+.custom-service #newBridge .nb-icon-group .nb-group-icon{
+	width: 0px;
+	height: 0px;
+	display: none;
+}
+.custom-service #newBridge .nb-icon-group .nb-icon-groups{
+	background: transparent;
+	border: none;
+
+}
+.custom-service #newBridge .nb-icon-groups-item{
+	width: 96px;
+	height: 28px;
+	line-height: 28px;
+	background-color: #e8e8e8 !important;
+	border:none;
+	text-align: center;
+	margin: 10px auto !important;
+	border: none !important;
+}
+.custom-service #newBridge .nb-icon-group .nb-group-text{
+	width: 100%;
+	margin-left: 0;
+	text-align: center;
+	color: #4d4d4d !important;
+	font-size: 12px;
+}
+.custom-service #newBridge .nb-middle{
+	box-shadow: 2px 2px 8px rgba(00,00,00, 0.3);
+}
+.custom-service #newBridge .nb-invite-body{
+	background: url(../images/ad-layer@1x.png) center center no-repeat;
+}
+.custom-service #newBridge .nb-invite-wrap .nb-invite-text{
+	top: 40px;
+    left: 178px;
+    right: 20px;
+}
+.custom-service #newBridge .nb-invite-wrap-base .nb-invite-text-base p {
+    color: #4d4d4d;
+    font-size: 14px;
+    line-height: 1.5;
+}
+.custom-service #newBridge .nb-invite-wrap-base .nb-invite-btn-base{
+	right: 35px;
+	bottom: 26px;
+}
+.custom-service #newBridge .nb-invite-wrap-base .nb-invite-cancel-base{
+	background-color: #e8e8e8;
+	color: #8b8b8b;
+	font-size: 12px;
+}
+.custom-service #newBridge .nb-invite-wrap-base .nb-invite-ok-base{
+	background-color: #119dff;
+	color: #fff;
+	font-size: 12px;
+}
+.custom-service #newBridge .nb-invite-wrap-base .nb-invite-tool-base{
+	background: url(../images/closed@1x.png) center center no-repeat;
+    right: 15px;
+    top: 12px;
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 2), 
+only screen and (min-device-pixel-ratio: 2) {
+	.custom-service #newBridge .nb-icon-base .nb-icon-bridge-base{
+		background: url(../images/consult@2x.png) center center no-repeat;
+		background-size: 100%;
+	}
+	.custom-service #newBridge .nb-invite-body{
+		background: url(../images/ad-layer@2x.png) center center no-repeat;
+		background-size: 100%;
+	}	
+	.custom-service #newBridge .nb-invite-wrap-base .nb-invite-tool-base{
+		background: url(../images/closed@2x.png) center center no-repeat;
+		background-size: 100%;
+	    right: 15px;
+    	top: 12px;
+	}
+}
+#newBridge .icon-right-center{
+	top:auto !important;
+	right: 20px;
+    bottom: 3% !important;
+    left: auto;
+    margin: -25px 0 0 0; 
+}

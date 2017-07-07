@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>易视云</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="Keywords" content="易视云，视频直播开放平台，视频直播SDK,手机APP直播源码，手机直播程序，VR直播，摄像机直播，电商直播，婚庆直播，会议直播，无人机、航拍直播，3D视频直播，金融直播间直播系统，金融直播间源码，教育直播，在线直播" />
+    <meta name="Description" content="易视云视频直播开放平台拥有领先的视频解码技术以及高流畅度的视频流媒体平台，提供视频直播SDK快速帮助企业APP，网站、微信等WEB端无缝衔接直播功能，并提供VR、无人机、航拍、摄像机直播，流媒体分发，存储等服务" />
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="baidu-site-verification" content="UPiURnj690" />
+    <meta name="format-detection" content="telephone=no" />
+    <link rel="stylesheet" type="text/css" href="{CSS_PATH}css_5/reset.css">
+    <link rel="stylesheet" type="text/css" href="{CSS_PATH}css_5/main.css">
+    <link rel="stylesheet" type="text/css" href="{CSS_PATH}css_5/layer.css">
+    <link rel="stylesheet" type="text/css" href="{CSS_PATH}css_5/responsive-menu.css">
+</head>
+<body>
+<!-- 导航 -->
+<div class="nav-page">
+    {template "content","header"}
+</div>
+<div class="banner">
+    <img src="{IMG_PATH}images_5/livecase_banner_top1@1x.png">
+    <div class="banner-info">这是AD位，商务活动~~！！</div>
+</div>
+<div class="apply-page">
+    <div class="apply-h-1">请留下您的联系方式  我们会尽快联系您开通免费试播权限</div>
+    <div class="apply-form">
+
+        <ul>
+            <li>
+                <p>*姓名 <span>Full Name</span></p>
+                <input type="text" name="customer_name">
+            </li>
+            <li>
+                <p>*公司名称 <span>Company Name</span></p>
+                <input type="text" name="customer_company">
+            </li>
+            <li>
+                <p>*联系电话 <span>Contact Number</span></p>
+                <input type="text" name="customer_phone">
+            </li>
+        </ul>
+        <div class="call submit">提交免费试播申请</div>
+    </div>
+</div>
+
+<div class="footer">
+   
+    {template "content","footer"}
+</div>
+</body>
+<script type="text/javascript" src="{JS_PATH}js_5/jquery.min.js"></script>
+<script type="text/javascript" src="{JS_PATH}js_5/layer.min.js"></script>
+<script type="text/javascript">
+//    $(".footer").load("footer.html");
+//    $(".nav-page").load("header.html");
+    // 申请试用
+    function layerMsg(msg){
+        layer.open({
+            content: msg,
+            style: 'background-color:rgba(0,0,0,1); color:#fff !important; border:none;',
+            time: 3
+        });
+    }
+    $('.submit').on('click',function(){
+        var customer_name = $.trim($('input[name=customer_name]').val());
+        var customer_company = $.trim($('input[name=customer_company]').val());
+        var customer_phone = $.trim($('input[name=customer_phone]').val());
+
+        if(customer_name.length<=0){
+            layerMsg('请填写联系人的名字')
+            return false;
+        }
+        if(customer_company.length<=0){
+            layerMsg('请填写公司名称')
+            return false;
+        }
+        if( (/^(((1[3578][0-9])|(147)|(170)){1}\d{8})$/.test(customer_phone)) ==false ){
+            layerMsg('请填写联系人的联系电话')
+            return false;
+        }
+
+        $.ajax({
+            url:"",
+            type:'post',
+            dataType:'json',
+            data:{
+                customer_name:customer_name,
+                customer_company:customer_company,
+                customer_phone:customer_phone,
+
+            },
+            success:function(data){
+
+                if(data.status==0){
+                    layerMsg('申请成功，我们将尽快与您联系！');
+                    setTimeout(function(){
+                        $(".application-page").css("display","none");
+                        $('input[name=customer_name]').val("");
+                        $('input[name=customer_company]').val("");
+                        $('input[name=customer_phone]').val("");
+
+                    },3000)
+                }
+            }
+        })
+    })
+</script>
+
+</html>

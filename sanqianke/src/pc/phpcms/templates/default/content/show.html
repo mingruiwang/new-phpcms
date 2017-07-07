@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>三千氪直播|发布会直播|峰会直播|大会直播|VR直播|无人机直播|比赛直播</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="Keywords" content="三千氪直播|发布会直播|峰会直播|大会直播|VR直播|无人机直播|比赛直播" />
+    <meta name="Description" content="三千氪直播，领先的商务直播平台，致力于为发布会直播、峰会直播、VR直播、无人机直播、比赛直播、大会直播等提供直播解决方案，热线400-667-9656" />
+    <link rel="icon" href="{IMG_PATH}images_6/favicon.ico" type="image/x-icon">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="baidu-site-verification" content="UPiURnj690" />
+    <meta name="format-detection" content="telephone=no" />
+    <link rel="stylesheet" type="text/css" href="{CSS_PATH}css_6/reset.css">
+    <link rel="stylesheet" type="text/css" href="{CSS_PATH}css_6/main.css">
+    <link rel="stylesheet" type="text/css" href="{CSS_PATH}css_6/layer.css">
+    <link rel="stylesheet" type="text/css" href="{CSS_PATH}css_6/responsive-menu.css">
+    <style type="text/css">
+        .caseplayback-page-advantage{
+            display:none;
+        }
+        .nav-box{
+            background-image: linear-gradient(-1deg, #070A24 3%, #070A24 93%) !important;
+            opacity: 1 !important;
+        }
+    </style>
+</head>
+<body>
+<div class="nav-page">
+    <div class="nav-box">
+        <div class="nav-bg nav-bg-background"></div>
+        <div class="nav">
+            <div class="logo">
+                <a href="index.php">
+                    <img src="<?php echo IMG_PATH;?>images_6/navigation_3QK_logo@2x.png">
+                </a>
+            </div>
+            <header>
+                <div class="wrapper">
+                    <div class="rm-container">
+                        <nav class="rm-nav rm-nojs rm-lighten">
+                            <ul>
+                                <li><a href="index.php" class='set-nav-click'>首页</a></li>
+                                <li><a href="?m=content&c=index&a=lists&catid=25">产品体验</a>
+                                </li>
+                                <li><a href="?m=content&c=index&a=lists&catid=26">直播服务</a></li>
+                                <li><a href="?m=content&c=index&a=lists&catid=14">直播案例</a></li>
+                                
+                                <li><a href="http://www.easyvaas.com/3qk.html">开放平台</a></li>
+                                <li><a href="javascript:;" class="nav-telnumber"><img src="<?php echo IMG_PATH;?>images_6/footer_phone.png" class="nav-iphone-icon">400- 667- 9656</a></li>
+                                <li><a href="https://3qk.easyvaas.com/manage/login">登录</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </header>
+        </div>
+    </div>
+</div>
+<div class="news-page w1062">
+    <!-- 新闻列表页 -->
+    <div class="newscontent-left">
+        <div class="newscontent-top-nav">
+            <span>媒体报道 > </span>
+            <a href="{$url}">{$title}</a>
+        </div>
+        <!-- <div class="newscontent-banner"><img src="{IMG_PATH}images_6/news_pic_ad1@2x.png"></div> -->
+        <div class="newscontent-info">
+            <div class="newscontent-info-title">
+               {$title}
+            </div>
+            <div class="newscontent-info-time">
+               {$inputtime}
+            </div>
+            <div class="newscontent-info-word">
+                {$content}
+
+                <!--<img src="{IMG_PATH}images_5/news_pic_ad1@2x.png">-->
+            </div>
+        </div>
+        <div class="newscontent-bottom-keys">
+            <strong>相关热词搜索：</strong>{loop $keywords $keyword}<a href="{APP_PATH}index.php?m=content&c=tag&a=lists&tag={urlencode($keyword)}" class="blue">{$keyword}</a> {/loop}
+            </p>
+
+
+            <p class="f14">
+                <strong>上一篇：</strong><a href="{$previous_page[url]}">{$previous_page[title]}</a><br />
+                <strong>下一篇：</strong><a href="{$next_page[url]}">{$next_page[title]}</a>
+            </p>
+        </div>
+    </div>
+    <div class="news-right">
+        <div class="caseplayback-page">
+            <!-- 直播列表 -->
+            <div class="caseplayback-page-advantage">
+                <img src="{IMG_PATH}images_6/news_pic_ad1@2x.png">
+            </div>
+            <div class="caseplayback-page-title">精彩案例回放</div>
+            <div class="caseplayback">
+                <ul>
+
+
+
+                    {pc:get sql="select*from 3qk_reply  where keyword='$keyword'" }
+                    {loop $data $row}
+
+                    {php $i==1}
+                    {php $i++}
+
+                    <li>
+                        <a href="{php echo $row[url]}">
+                            <img src="{php echo $row[img]}" class="caseplayback-img">
+                            <div class="caseplayback-title-box">
+                                <div class="caseplayback-title-bg"></div>
+                                <div class="caseplayback-title">{php echo $row[title]}</div>
+                            </div>
+                            <div class="caseplayback-bottom">
+                                <div class="caseplayback-name clearfix">
+                                    <span>发起人</span>
+                                    <span>{php echo $row[owner]}</span>
+                                </div>
+                                <div class="caseplayback-time">{php echo $row[starttime]}</div>
+                                <div class="caseplayback-number clearfix">
+                                    <span><img src="{IMG_PATH}images_5/livecase_icon_peoplenumber@2x.png"></span>
+                                    <span>{php echo $row[audience]}</span>
+                                    <span>回放</span>
+                                    <span><img src="{IMG_PATH}images_5/livecase_icon_playback2@2x.png"></span>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+
+                    {php if($i==6)break;}
+
+                    {/loop}
+                    {/pc}
+
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="footer">
+
+    {template "content","footer"}
+</div>
+</body>
+<script type="text/javascript" src="{JS_PATH}js_6/jquery.min.js"></script>
+<script type="text/javascript" src="{JS_PATH}js_6/bootstrap.js"></script>
+<!-- 分页效果 -->
+<script type="text/javascript" src="{JS_PATH}js_6/extendPagination.js"></script>
+<script type="text/javascript">
+    // 直播列表的鼠标划入样式
+    $(".news-right").load("caseplayback.html");
+    $(".news-left li").hover(function(){
+        $(this).find(".news-info-title").addClass("set-color");
+    },function(){
+        $(this).find(".news-info-title").removeClass("set-color");
+    })
+</script>
+<script type="text/javascript">
+    var totalCount = 30;
+    var showCount = 10;
+    var limit = 1;
+    totalCount = totalCount || 252;
+    limit = limit || 10;
+    callBackPagination();
+    function callBackPagination() {
+        createTable(1, limit, totalCount);
+        $('#callBackPager').extendPagination({
+            totalCount: totalCount,
+            showCount: showCount,
+            limit: limit,
+            callback: function (curr, limit, totalCount) {
+                createTable(curr, limit, totalCount);
+            }
+        });
+    }
+    function createTable(currPage, limit, total) {
+        var html = [], showNum = limit;
+        if (total - (currPage * limit) < 0) showNum = total - ((currPage - 1) * limit);
+        var mainObj = $('#mainContent');
+        mainObj.empty();
+        mainObj.html(html.join(''));
+    }
+</script>
+<script type="text/javascript">
+    // 回放列表
+    $(".caseplayback li").hover(function(){
+        $(this).find(".caseplayback-img").addClass("set-opc4");
+        $(this).find(".caseplayback-title").addClass("set-color");
+    },function(){
+        $(this).find(".caseplayback-img").removeClass("set-opc4");
+        $(this).find(".caseplayback-title").removeClass("set-color");
+    })
+</script>
+</html>

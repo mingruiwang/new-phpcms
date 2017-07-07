@@ -1,0 +1,19 @@
+<?php
+
+return array (
+	'default' => array (
+		'hostname' => 'rm-2ze93zcy31ug8407h.mysql.rds.aliyuncs.com',
+		'port' => 3306,
+		'database' => 'phpcmsv9',
+		'username' => 'yizhibo',
+		'password' => 'Yizhibo@2017',
+		'tablepre' => '',
+		'charset' => 'utf8mb4',
+		'type' => 'mysqli',
+		'debug' => true,
+		'pconnect' => 0,
+		'autoconnect' => 0
+		),
+);
+
+?>

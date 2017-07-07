@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>三千氪直播|发布会直播|峰会直播|大会直播|VR直播|无人机直播|比赛直播</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="Keywords" content="三千氪直播|发布会直播|峰会直播|大会直播|VR直播|无人机直播|比赛直播" />
+        <meta name="Description" content="三千氪直播，领先的商务直播平台，致力于为发布会直播、峰会直播、VR直播、无人机直播、比赛直播、大会直播等提供直播解决方案，热线400-667-9656" />
+        <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="baidu-site-verification" content="UPiURnj690" />
+        <meta name="format-detection" content="telephone=no" />
+        <link rel="stylesheet" type="text/css" href="css/reset.css">
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="css/responsive-menu.css">
+        <link rel="stylesheet" type="text/css" href="css/layer.css">
+        <link rel="stylesheet" type="text/css" href="css/main.css"> 
+    </head>
+    <body>
+        <!-- 导航 -->
+        <div class="nav-page"></div>
+        <div class="banner">
+            <img src="images/media-banner.jpg">
+            <div class="banner-info">这是AD位，商务活动~~！！</div>
+        </div>
+        <div class="news-page w1062">
+            <!-- 新闻列表页 -->
+            <div class="news-left">
+                <ul>
+                    <li>
+                        <a href="newscontent.html">
+                            <div class="news-img">
+                                <img src="images/news_pic_1@2x.png">
+                            </div>
+                            <div class="news-info">
+                                <div class="news-info-title">易视云全球独家HD直播</div>
+                                <div class="news-info-desc">易视云平台提供领先的视频编解码技术和高效流畅的视频流媒体服务，帮助企业搭建、存储等服务存储等储等易视云平台提供领先的视频编解码技术和高效流畅的视频流媒体服务，帮助企业搭建、存储等服务存储等储等易视云平台提供领先的视频编解码技术和高效流畅的视频流媒体服务，帮助企业搭建、存储等服务存储等储等</div>
+                                <div class="news-info-grade"><img src="images/news_icon_star@2x.png"></div>
+                                <div class="news-info-time">
+                                    <span class="news-info-time-icon"><img src="images/news_icon_time@2x.png"></span>
+                                    <span class="news-info-time-content">2017-05-30</span>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">
+                            <div class="news-img">
+                                <img src="images/news_pic_1@2x.png">
+                            </div>
+                            <div class="news-info">
+                                <div class="news-info-title">易视云全球独家HD直播</div>
+                                <div class="news-info-desc">易视云平台提供领先的视频编解码技术和高效流畅的视频流媒体服务，帮助企业搭建、存储等服务存储等储等易视云平台提供领先的视频编解码技术和高效流畅的视频流媒体服务，帮助企业搭建、存储等服务存储等储等易视云平台提供领先的视频编解码技术和高效流畅的视频流媒体服务，帮助企业搭建、存储等服务存储等储等</div>
+                                <div class="news-info-grade"><img src="images/news_icon_star@2x.png"></div>
+                                <div class="news-info-time">
+                                    <span class="news-info-time-icon"><img src="images/news_icon_time@2x.png"></span>
+                                    <span class="news-info-time-content">2017-05-30</span>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+                <!-- 翻页效果 -->
+                <div id="callBackPagination" class="piece">
+                    <div id="mainContent"></div>
+                    <div id="callBackPager"></div>
+                </div>
+            </div>
+            <div class="news-right"></div>
+        </div>
+        <div class="footer"></div>
+    </body>
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.js"></script>
+    <!-- 分页效果 -->
+    <script type="text/javascript" src="js/extendPagination.js"></script>
+    <script type="text/javascript" src="js/common.js"></script>
+    <script type="text/javascript">
+        $(".footer").load("footer.html");
+        $(".nav-page").load("header.html");
+        // 直播列表的鼠标划入样式
+        $(".news-right").load("caseplayback.html");
+        $(".news-left li").hover(function(){
+            $(this).find(".news-info-title").addClass("set-color");
+        },function(){
+            $(this).find(".news-info-title").removeClass("set-color");
+        })
+    </script>
+    <script type="text/javascript">
+        var totalCount = 30;
+        var showCount = 10;
+        var limit = 1;
+        totalCount = totalCount || 252;
+        limit = limit || 10;
+        callBackPagination();
+        function callBackPagination() {
+            createTable(1, limit, totalCount);
+            $('#callBackPager').extendPagination({
+                totalCount: totalCount,
+                showCount: showCount,
+                limit: limit,
+                callback: function (curr, limit, totalCount) {
+                    createTable(curr, limit, totalCount);
+                }
+            });
+        }
+        function createTable(currPage, limit, total) {
+            var html = [], showNum = limit;
+            if (total - (currPage * limit) < 0) showNum = total - ((currPage - 1) * limit);
+            var mainObj = $('#mainContent');
+            mainObj.empty();
+            mainObj.html(html.join(''));
+        }
+    </script>
+</html>
